@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.orbital">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Voluntier"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Orbital">
+        <activity
+            android:name=".CodingEvent"></activity>
+        <activity android:name=".Survey" />
+        <activity android:name=".Joined" />
+        <activity
+            android:name=".EventList"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Profile" />
+        <activity
+            android:name=".Splashscreen"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Homescreen"
+            android:label="Voluntier"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+    </application>
+
+</manifest>
