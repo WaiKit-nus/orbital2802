@@ -33,12 +33,12 @@ Additional Features:
 2) SplashScreen - To make it more morden.
 3) Stickers and trophy system - Aim to include a point system. The more you volunteer, the more points you are awarded to obtain different stickers in the app.
 
-Existing platforms
+Existing platforms:
 1) Youth Corps Website - covers a diverse range of volunteer options for young people through ad - hoc basis, regular, and project-based service programs, with a focus on education, the environment, health, special needs, arts, sports, and history. Youth Corps Singapore Website is not fully optimised when users access the website through phone.
 
 2) Volunteer.sg Application - A one-stop platform enabling citizens to organize and manage their volunteer activities. It also contains suggestions, keeps a record of volunteer commitments, syncs calendars, allows citizens to check in online, and links them with other like-minded volunteers. The launch of Volunteer.sg has received multiple bad reviews from the application store such as being buggy and not connecting well.
 
-How is Voluntier Different
+How is Voluntier Different:
 We aim to be the go-to one-stop platform for people who want to volunteer. The process when using Voluntier is very stream-lined and efficient. The User interface is designed to be friendly and simplistic. Voluntier also has key features that the other app does not have.
 
 Key Features that only Voluntier has:
