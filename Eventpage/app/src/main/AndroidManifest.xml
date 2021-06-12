@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orbital">
-        <activity
-            android:name=".CodingEvent"></activity>
+        <activity android:name=".Chat"></activity>
+        <activity android:name=".CodingEvent" />
         <activity android:name=".Survey" />
         <activity android:name=".Joined" />
         <activity
