@@ -11,5 +11,6 @@ public class LoginTabFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_frag,container,false);
-        return root;}
+        return root;
+    }
 }

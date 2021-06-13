@@ -1,3 +1,25 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="app_name">Voluntier</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--For Profile page-->
+    <string name="password">Password</string>   <!--For signup&login page too-->
+    <string name="name">Name</string>
+    <string name="email">Email</string> <!--For signup&login page too-->
+    <string name="address">Address</string>
+    <string name="dob">Date of Birth</string>
+    <string name="contact">Contact</string> <!--For signup page too-->
+    <string name="gender">Gender</string>
+
+    <!--For Edit Profile Page-->
+    <string name="confirm_password">Confirm Password</string>   <!--For signup page too-->
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="editdob">DOB: DD/MM/YY</string>
+    <string name="editAddress">Address</string>
+    <string name="editContact">Contact</string>
+    <string name="editGender">Gender: M/F</string>
+    <string name="editName">Name</string>
+    <string name="editEmail">Email</string>
 </resources>
