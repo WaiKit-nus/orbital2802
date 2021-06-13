@@ -31,7 +31,7 @@ public class Splashscreen extends AppCompatActivity {
                                 result=toSpeech.setLanguage(Locale.UK);
                                 if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
                                 {
-                                    Toast.makeText(getApplicationContext(),"Fearure not supported in your device", Toast.LENGTH_SHORT).show();
+                                   // Toast.makeText(getApplicationContext(),"Fearure not supported in your device", Toast.LENGTH_SHORT).show();
                                 }
                                 else {
                                     text= textView.getText().toString();
@@ -40,7 +40,7 @@ public class Splashscreen extends AppCompatActivity {
 
                             }
                             else {
-                                Toast.makeText(getApplicationContext(),"Feature not supported in your device", Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getApplicationContext(),"Feature not supported in your device", Toast.LENGTH_SHORT).show();
                             }
                         }
 
