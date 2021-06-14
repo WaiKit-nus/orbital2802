@@ -58,6 +58,7 @@
                     android:drawableEnd="@drawable/search_btn"
                     android:paddingRight="10dp"
                     android:elevation="10dp"
+                    android:id="@+id/find_event"
 
                     ></EditText>
             </LinearLayout>
