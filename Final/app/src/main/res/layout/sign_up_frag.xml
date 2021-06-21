@@ -21,6 +21,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:textColorHint="@color/DarkerGrey"
+            android:textColor="@color/DarkerGrey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -35,24 +36,7 @@
             android:background="@drawable/edit_text_bg"
             android:hint="@string/password"
             android:textColorHint="@color/DarkerGrey"
-            android:paddingLeft="20dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/number" />
-        <EditText
-            android:id="@+id/number"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintWidth_percent=".8"
-            app:layout_constraintVertical_bias="0"
-            app:layout_constraintHorizontal_bias=".5"
-            android:background="@drawable/edit_text_bg"
-            android:hint="@string/contact"
-            android:textColorHint="@color/DarkerGrey"
+            android:textColor="@color/DarkerGrey"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -61,6 +45,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/email" />
+
         <EditText
             android:id="@+id/confirmPass"
             android:layout_width="0dp"
@@ -72,6 +57,7 @@
             android:hint="@string/confirm_password"
             android:paddingLeft="20dp"
             android:textColorHint="@color/DarkerGrey"
+            android:textColor="@color/DarkerGrey"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:layout_marginTop="20dp"
@@ -91,12 +77,12 @@
             android:backgroundTint="@color/purple_200"
             app:backgroundTint="@null"
             android:id="@+id/btn_signup"
-            app:layout_constraintVertical_bias=".8"
+            app:layout_constraintVertical_bias=".6"
             app:cornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/confirmPass"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

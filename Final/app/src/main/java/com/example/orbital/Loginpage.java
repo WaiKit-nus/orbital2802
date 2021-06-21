@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Loginpage extends AppCompatActivity {
     TabLayout tabLayout;
@@ -34,9 +36,6 @@ public class Loginpage extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("SignUp"));
         tabLayout.setTabTextColors(Color.parseColor("#D8D8D8"), Color.parseColor("#FF6200EE"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-
-
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -61,6 +60,13 @@ public class Loginpage extends AppCompatActivity {
                 tabLayout.selectTab(tabLayout.getTabAt(position));
             }
         });
+    }
+
+    protected void onStart(){
+        super.onStart();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null)
+            startActivity(new Intent(this, Homescreen.class));
     }
 
 

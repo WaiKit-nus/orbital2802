@@ -30,19 +30,18 @@
             app:layout_constraintTop_toBottomOf="@id/profile_image"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="Jake Winger"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold"
             android:layout_marginTop="30dp"
             android:id="@+id/name_textview"/>
         <TextView
+            android:id="@+id/email_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/name_textview"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:text="Jake.Winger@gmail.com"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -87,17 +86,14 @@
                 android:textSize="18sp"
                 />
 
-            <TextView
+            <Button
                 android:id="@+id/password_realText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
-                android:layout_weight="1"
-                android:text="*********"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:gravity="end" />
+                android:text="@string/change_password"
+                android:textColor="@color/white"
+                android:textSize="10dp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -134,7 +130,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
-                android:text="Merah Heights Blk 256 #03-1888"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -178,7 +173,6 @@
                 android:textSize="14sp"
                 android:layout_marginTop="25dp"
                 android:textColor="@color/black"
-                android:text="10/03/2010"
                 android:gravity="end" />
         </LinearLayout>
 
@@ -210,17 +204,17 @@
 
                 android:textColor="@color/black"
                 />
+
             <TextView
+                android:id="@+id/contact_realText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/contact_realText"
                 android:layout_marginTop="25dp"
-                android:textColor="@color/black"
-                android:textSize="14sp"
                 android:layout_weight="1"
+                android:gravity="end"
                 android:textAlignment="viewEnd"
-                android:text="98765432"
-                android:gravity="end" />
+                android:textColor="@color/black"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -260,7 +254,6 @@
                 android:textSize="18sp"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/black"
-                android:text="M"
                 android:gravity="end" />
         </LinearLayout>
 
