@@ -45,6 +45,7 @@
             android:layout_marginTop="17.5dp"
             android:id="@+id/edit_name_textview"/>
         <EditText
+            android:id="@+id/edit_email"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintWidth_percent=".5"
@@ -80,6 +81,7 @@
         android:elevation="10dp"
         android:id="@+id/full_LinearLayout">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -90,70 +92,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_bg"
-                android:gravity="center_horizontal"
-                android:hint="@string/new_password"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:password="true"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                android:textColorHint="@color/DarkerGrey"
-                app:layout_constraintHorizontal_bias=".5"
-                app:layout_constraintVertical_bias=".25"
-                app:layout_constraintWidth_percent=".5" />
-
-            <EditText
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="5dp"
-                android:layout_weight="1"
-                android:background="@drawable/edit_text_bg"
-                android:gravity="center_horizontal"
-                android:hint="@string/confirm_password"
-                android:orientation="horizontal"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
-                android:password="true"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textColorHint="@color/DarkerGrey"
-                android:textSize="13sp"
-                android:textStyle="bold"
-                app:layout_constraintHorizontal_bias=".5"
-                app:layout_constraintVertical_bias=".25"
-                app:layout_constraintWidth_percent=".5" />
-        </LinearLayout>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/appCompatImageView1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="5dp"
-            android:alpha="0.5"
-            android:background="#585858" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="2.5dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:orientation="horizontal">
-
-            <EditText
+                android:id="@+id/edit_address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -195,6 +134,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/edit_dob"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -221,6 +161,7 @@
                 app:layout_constraintWidth_percent=".5" />
 
             <EditText
+                android:id="@+id/edit_contact"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -262,6 +203,7 @@
             android:orientation="horizontal">
 
             <EditText
+                android:id="@+id/confirmPasswordEdit"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -271,7 +213,7 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_bg"
                 android:gravity="center_horizontal"
-                android:hint="@string/old_password"
+                android:hint="@string/password"
                 android:orientation="horizontal"
                 android:paddingLeft="25dp"
                 android:paddingTop="10dp"
@@ -288,6 +230,7 @@
                 app:layout_constraintWidth_percent=".5" />
 
             <EditText
+                android:id="@+id/edit_gender"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

@@ -9,14 +9,23 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Homescreen extends AppCompatActivity implements View.OnClickListener {
     private CardView profile, events, joinedevents, survey;
     private Button logout;
+
+    FirebaseAuth mAuth;
+    FirebaseFirestore db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homescreen);
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         logout = findViewById(R.id.logout_btn);
 
@@ -58,5 +67,15 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
                 startActivity(new Intent(Homescreen.this, Loginpage.class));
             }
         });
-    }
+   }
+
+   public void checkUserVerification(){
+       FirebaseUser currentUser = mAuth.getCurrentUser();
+       if(!currentUser.isEmailVerified()){
+           //Display message and button to prompt user to verify.
+
+       }
+   }
+
+
 }

@@ -85,15 +85,22 @@ public class SignUpTabFragment extends Fragment {
 
     public void registerUsertoFirebase(String email, String pw)
     {
-        mAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(getActivity(), "Registration Successful", Toast.LENGTH_SHORT).show();
+        mAuth.createUserWithEmailAndPassword(email, pw).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                FirebaseUser currentUser = mAuth.getCurrentUser();
+                currentUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        Toast.makeText(getContext(), "Verification Email has been sent." ,Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d("onFailure:", "Email not sent" + e.getMessage());
+                    }
+                });
 
-                }
-                else
-                    Toast.makeText(getActivity(), "Registration Failed", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Registered!", Toast.LENGTH_SHORT).show();
             }
         });
     }
