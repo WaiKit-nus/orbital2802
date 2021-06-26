@@ -13,7 +13,7 @@
         android:layout_width="135dp"
         android:layout_height="118dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="15dp"
         android:src="@drawable/logo" />
 
     <ImageView
@@ -31,20 +31,18 @@
         android:text="@string/logout"/>
 
     <GridLayout
-        android:id="@+id/grid"
-        android:layout_width="363dp"
-        android:layout_height="392dp"
-        android:layout_below="@id/title_view"
-        android:layout_marginStart="30sp"
-        android:layout_marginTop="0sp"
-        android:layout_marginEnd="30sp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:rowCount="2"
         android:columnCount="2"
-        android:rowCount="2">
+        android:layout_below="@id/title_view"
+        android:layout_margin="30sp"
+        >
 
         <androidx.cardview.widget.CardView
             android:id="@+id/profile_card"
             android:layout_width="22dp"
-            android:layout_height="90dp"
+            android:layout_height="84dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -82,81 +80,76 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/events_card"
-            android:layout_width="56dp"
-            android:layout_height="126dp"
-            android:layout_row="0"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="8dp"
-            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="fill"
             app:cardBackgroundColor="#B67670"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
+            app:cardElevation="8dp"
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <ImageView
                     android:layout_width="70sp"
                     android:layout_height="70sp"
                     android:src="@drawable/checklist" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="EVENTS"
-                    android:textAlignment="center"
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/white"
+                    android:textAlignment="center"
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/joinedevents_card"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:clickable="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_row="1"
-            android:layout_rowWeight="1"
             android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
             app:cardBackgroundColor="#FAC424"
+            android:layout_gravity="fill"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
             app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
+            app:cardElevation="8dp"
+            >
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
-
                 <ImageView
                     android:layout_width="70sp"
                     android:layout_height="60sp"
                     android:src="@drawable/completedtask" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="JOINED"
-                    android:textAlignment="center"
-
+                    android:layout_marginTop="20dp"
                     android:textColor="@color/white"
-                    android:textStyle="bold" />
 
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -179,7 +172,7 @@
             android:layout_margin="8dp"
             android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="#4b7eca"
+            app:cardBackgroundColor="#FBCDB5"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -198,8 +191,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
                     android:text="SURVEY"
+                    android:layout_marginTop="20dp"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textStyle="bold" />
@@ -208,58 +201,6 @@
 
 
     </GridLayout>
-
-    <GridLayout
-        android:layout_width="363dp"
-        android:layout_height="1030dp"
-        android:layout_below="@id/grid"
-        android:layout_marginStart="30sp"
-        android:layout_marginTop="5sp"
-        android:layout_marginEnd="30sp"
-        android:layout_marginBottom="15sp">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/chatlog"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_rowWeight="1"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_margin="8dp"
-            android:clickable="true"
-            android:foreground="?android:attr/selectableItemBackground"
-            app:cardBackgroundColor="#f6b092"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="8dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|center_horizontal"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="70sp"
-                    android:layout_height="70sp"
-                    android:src="@drawable/chat" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:text="CHATS"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-    </GridLayout>
-
 
 
 

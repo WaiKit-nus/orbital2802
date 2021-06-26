@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Homescreen extends AppCompatActivity implements View.OnClickListener {
-    private CardView profile, events, joinedevents, survey, chatlog;
+    private CardView profile, events, joinedevents, survey;
     private Button logout;
 
     FirebaseAuth mAuth;
@@ -34,14 +34,12 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
         events = (CardView) findViewById(R.id.events_card);
         joinedevents = (CardView) findViewById(R.id.joinedevents_card);
         survey = (CardView) findViewById(R.id.survey_card);
-        chatlog = (CardView) findViewById(R.id.chatlog);
 
         //Add click Listener to clock
         profile.setOnClickListener(this);
         events.setOnClickListener(this);
         joinedevents.setOnClickListener(this);
         survey.setOnClickListener(this);
-        chatlog.setOnClickListener(this);
         logoutUser();
     }
 
@@ -54,7 +52,6 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
             case R.id.events_card: i = new Intent(this, EventList.class); startActivity(i);break;
             case R.id.joinedevents_card: i = new Intent(this, Joined.class); startActivity(i);break;
             case R.id.survey_card: i = new Intent(this, Survey.class); startActivity(i); break;
-            case R.id.chatlog: i = new Intent(this, ChatsLog.class); startActivity(i); break;
             default:break;
         }
 

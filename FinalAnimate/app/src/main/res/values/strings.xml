@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Orbital</string>
+    <string name="dashboard_title">Dashboard</string>
+    <string name="dashboard_heading">Find Opportunities happening around you</string>
+    <string name="dashboard_sub_title">27 upcoming events</string>
+    <string name="search_bar_hint">search for an event...</string>
+    <string name="dummy_text">As a Facilitator you will be taking on the role to keep children engaged through online coding games and make learning fun for them via Zoom! Facilitators would also need to ensure a safe online space for the children while befriending them. </string>
+    <string name="location">Singapore, Zoom</string>
+    <string name="description">School’s out, Fun’s in! KidsFun School Holiday series is back again this June!\ Join us to enrich yourself and to make school holidays meaningful for primary school children through the interactive online coding game, codeSpark!</string>
+    <string name="logout">Logout</string>
+
+    <!--For Profile page-->
+    <string name="password">Password</string>   <!--For signup&login page too-->
+    <string name="change_password">Change Password</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string> <!--For signup&login page too-->
+    <string name="address">Address</string>
+    <string name="dob">Date of Birth</string>
+    <string name="contact">Contact</string> <!--For signup page too-->
+    <string name="gender">Gender</string>
+
+    <!--For Edit Profile Page-->
+    <string name="confirm_password">Confirm Password</string>   <!--For signup page too-->
+    <string name="new_password">New Password</string>
+    <string name="old_password">Old Password</string>
+    <string name="editdob">DOB: DD/MM/YY</string>
+    <string name="editAddress">Address</string>
+    <string name="editContact">Contact</string>
+    <string name="editGender">Gender: M/F</string>
+    <string name="editName">Name</string>
+    <string name="editEmail">Email</string>
+
+    <!--For Survey page-->
+    <string name="surveyTitle">Survey</string>
+    <string name="Rating">What is your rating for the event?</string>
+    <string name="q1">Volunteer Experience for this Programme?</string>
+    <string name="q2">Overall Event progression?</string>
+    <string name="q3">Overall volunteer coordination and engagement?</string>
+    <string name="q4">What worked well?</string>
+    <string name="q5">Challenges?</string>
+    <string name="q6">Improvements?</string>
+    <string name="btn_done">Done!</string>
+    <string name="btn_reset">Reset</string>
+    <string-array name="rating_array">
+        <item>Very Poor</item>
+        <item>Poor</item>
+        <item>Fair</item>
+        <item>Good</item>
+        <item>Very Good</item>
+    </string-array>
+
+</resources>

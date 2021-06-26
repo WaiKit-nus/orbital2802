@@ -10,7 +10,6 @@
         android:roundIcon="@drawable/logo_circle_nowords"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orbital">
-        <activity android:name=".ChatsLog"></activity>
         <activity android:name=".Editprofile" />
         <activity
             android:name=".Splashscreen"
@@ -33,7 +32,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".UpdateParticulars"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".Chat" />
         <activity android:name=".CodingEvent" />
         <activity android:name=".Survey" />
