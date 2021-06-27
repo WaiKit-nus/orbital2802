@@ -1,10 +1,12 @@
 package com.example.orbital;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.TextUtils;
@@ -25,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,9 +37,11 @@ public class UpdateParticulars extends AppCompatActivity {
     private EditText dob;
     private EditText contact;
     private EditText gender;
-    private ImageView profileImage;
+    private ImageView update_profileImage;
     private Button reset;
     private Button confirmBtn;
+
+    private Uri imageUri;
 
     //Firebase Cloud Firestore
     FirebaseAuth mAuth;
@@ -54,7 +59,7 @@ public class UpdateParticulars extends AppCompatActivity {
         //rootNode = FirebaseDatabase.getInstance();
         db = FirebaseFirestore.getInstance();
 
-        profileImage = findViewById(R.id.update_profile_image);
+        update_profileImage = findViewById(R.id.update_profile_image);
         name = findViewById(R.id.update_name_textview);
         address = findViewById(R.id.update_Address);
         dob = findViewById(R.id.update_DOB);
@@ -63,13 +68,15 @@ public class UpdateParticulars extends AppCompatActivity {
         reset = findViewById(R.id.update_button_reset);
         confirmBtn = findViewById(R.id.update_button_confirm);
 
-        /*profileImage.setOnClickListener(new View.OnClickListener() {
+        update_profileImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                registerForActivityResult(openGalleryIntent, 1000);
+                startActivityForResult(openGalleryIntent, 1000);
+
             }
-        });*/
+        });
+
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,6 +94,16 @@ public class UpdateParticulars extends AppCompatActivity {
                 checkTextField();
             }
         });
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode == 1000 && resultCode == RESULT_OK){
+            imageUri = data.getData();
+            update_profileImage.setImageURI(imageUri);
+        }
     }
 
     public void checkTextField(){

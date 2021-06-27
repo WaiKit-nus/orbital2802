@@ -19,7 +19,6 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 import org.w3c.dom.Text;
 
 public class Profile extends AppCompatActivity {
-    private TextView password;
     private TextView address;
     private TextView dob;
     private TextView contact;
@@ -41,7 +40,6 @@ public class Profile extends AppCompatActivity {
 
         name = findViewById(R.id.name_textview);
         email = findViewById(R.id.email_textview);
-        password = findViewById(R.id.password_realText);
         address = findViewById(R.id.address_realText);
         dob = findViewById(R.id.dob_realText);
         contact = findViewById(R.id.contact_realText);

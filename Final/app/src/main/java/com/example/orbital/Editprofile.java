@@ -1,22 +1,31 @@
 package com.example.orbital;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,8 +36,9 @@ public class Editprofile extends AppCompatActivity {
     private EditText address;
     private EditText dob;
     private EditText contact;
-    private EditText password;
     private EditText gender;
+    private ImageView edit_imageView;
+    private Uri imageUri;
 
     private Button confirm;
     private Button reset;
@@ -36,6 +46,7 @@ public class Editprofile extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore db;
     private String userID;
+    StorageReference storageReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +57,17 @@ public class Editprofile extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        storageReference = FirebaseStorage.getInstance().getReference();
 
         name = findViewById(R.id.edit_name_textview);
         email = findViewById(R.id.edit_email);
         address = findViewById(R.id.edit_address);
         dob = findViewById(R.id.edit_dob);
         contact = findViewById(R.id.edit_contact);
-        password = findViewById(R.id.confirmPasswordEdit);
         gender = findViewById(R.id.edit_gender);
         reset = findViewById(R.id.button_reset);
         confirm = findViewById(R.id.button_confirm);
+        edit_imageView = findViewById(R.id.profile_image_e);
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,23 +78,55 @@ public class Editprofile extends AppCompatActivity {
                 contact.getText().clear();
                 gender.getText().clear();
                 email.getText().clear();
-                password.getText().clear();
             }
         });
 
-        /*confirm.setOnClickListener(new View.OnClickListener() {
+        edit_imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(TextUtils.isEmpty(password.getText().toString()))
-                    Toast.makeText(Editprofile.this, "Please input your password!", Toast.LENGTH_SHORT).show();
-                else if(TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(address.getText().toString()) || TextUtils.isEmpty(dob.getText().toString()) || TextUtils.isEmpty(contact.getText().toString()) || TextUtils.isEmpty(gender.getText().toString()))
+                Intent openGalleryIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(openGalleryIntent, 1000);
+
+            }
+        });
+
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(TextUtils.isEmpty(name.getText().toString()) || TextUtils.isEmpty(address.getText().toString()) || TextUtils.isEmpty(dob.getText().toString()) || TextUtils.isEmpty(contact.getText().toString()) || TextUtils.isEmpty(gender.getText().toString()))
                     Toast.makeText(Editprofile.this, "Please fill up all details", Toast.LENGTH_SHORT).show();
                 else
                 {
-                    if(password.getText().toString() == currentUser.)
+                    editDatabase();
                 }
             }
-        });*/
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+        if(requestCode == 1000 && resultCode == RESULT_OK){
+            imageUri = data.getData();
+            edit_imageView.setImageURI(imageUri);
+
+            uploadImageToFirebase(imageUri);
+        }
+    }
+
+    private void uploadImageToFirebase(Uri imageUri){
+        StorageReference fileRef = storageReference.child("profile.jpg");
+        fileRef.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                Toast.makeText(Editprofile.this, "Uploaded Image", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(Editprofile.this, "Upload Failed.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void editDatabase(){
