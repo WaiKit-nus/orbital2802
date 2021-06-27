@@ -99,6 +99,7 @@ public class Editprofile extends AppCompatActivity {
                 else
                 {
                     editDatabase();
+                    openProfilePage();
                 }
             }
         });
@@ -151,5 +152,10 @@ public class Editprofile extends AppCompatActivity {
                 Log.d("FailureToEditProfile", e.getMessage());
             }
         });
+    }
+
+    public void openProfilePage() {
+        Intent intent = new Intent(Editprofile.this, Profile.class);
+        startActivity(intent);
     }
 }
