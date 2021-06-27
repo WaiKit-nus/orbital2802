@@ -57,7 +57,7 @@ public class SignUpTabFragment extends Fragment {
             public void onClick(View v) {
                 createUser();
                 //includeEmailandPW();
-                openUpdateParticularPage();
+
             }
         });
         return root;
@@ -78,8 +78,9 @@ public class SignUpTabFragment extends Fragment {
         {
             Toast.makeText(getActivity(), "Password is not the same", Toast.LENGTH_SHORT).show();
         }
-        else
+        else{
             registerUsertoFirebase(txt_email,txt_pw);
+            openUpdateParticularPage();}
     }
 
 
