@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -75,5 +77,32 @@ public class Profile extends AppCompatActivity {
     {
         Intent intent = new Intent(this, Editprofile.class);
         startActivity(intent);
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DocumentReference documentReference = db.collection("Users").document(mAuth.getUid());
+        documentReference.update("Status","offline").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Now User is Offline", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        DocumentReference documentReference = db.collection("Users").document(mAuth.getUid());
+        documentReference.update("Status","online").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(getApplicationContext(),"Now User is online", Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }

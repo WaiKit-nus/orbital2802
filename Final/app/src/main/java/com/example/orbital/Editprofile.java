@@ -138,6 +138,9 @@ public class Editprofile extends AppCompatActivity {
         userDetail.put("Date of Birth", dob.getText().toString());
         userDetail.put("Contact", contact.getText().toString());
         userDetail.put("Gender", gender.getText().toString());
+        userDetail.put("Status","online");
+        userDetail.put("Uid",mAuth.getUid());
+
 
         userID = mAuth.getCurrentUser().getUid();
         db.collection("Users").document(userID).update(userDetail).addOnCompleteListener(new OnCompleteListener<Void>() {
