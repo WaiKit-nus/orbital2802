@@ -63,7 +63,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status"
+            android:text="PROFILE"
             android:id="@+id/status">
 
         </com.google.android.material.tabs.TabItem>
@@ -71,7 +71,7 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calls"
+            android:text="USER"
             android:id="@+id/calls">
 
         </com.google.android.material.tabs.TabItem>

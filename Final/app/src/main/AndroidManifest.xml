@@ -10,7 +10,8 @@
         android:roundIcon="@drawable/logo_circle_nowords"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orbital">
-        <activity android:name=".ChatsLog"></activity>
+        <activity android:name=".specifichat"></activity>
+        <activity android:name=".ChatsLog" />
         <activity android:name=".Editprofile" />
         <activity
             android:name=".Splashscreen"

@@ -139,6 +139,8 @@ public class UpdateParticulars extends AppCompatActivity {
         users.put("Date of Birth", dob.getText().toString());
         users.put("Contact", contact.getText().toString());
         users.put("Gender", gender.getText().toString());
+        users.put("Status", "online");
+        users.put("Uid",mAuth.getUid());
         userID = mAuth.getCurrentUser().getUid();
         db.collection("Users").document(userID).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
