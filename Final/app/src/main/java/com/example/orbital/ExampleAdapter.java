@@ -1,5 +1,6 @@
 package com.example.orbital;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,10 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     private ArrayList<ExampleItem> mExampleList;
     private OnItemClickListener mListener;
 
+    public ExampleAdapter(ArrayList<ExampleItem> mExampleList, OnItemClickListener mListener) {
+        this.mExampleList = mExampleList;
+        this.mListener = mListener;
+    }
 
     public interface  OnItemClickListener {
         void onItemClick(int position);
@@ -56,6 +61,7 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     }
 
     public ExampleAdapter(ArrayList<ExampleItem> exampleList) {
+        super();
         mExampleList = exampleList;
     }
 
@@ -69,9 +75,10 @@ public class ExampleAdapter extends RecyclerView.Adapter<ExampleAdapter.ExampleV
     @Override
     public void onBindViewHolder(ExampleViewHolder holder, int position) {
         ExampleItem currentItem = mExampleList.get(position);
-        holder.mImageView.setImageResource(currentItem.getImageResouce());
-        holder.mTextView1.setText(currentItem.getEventname());
-        holder.mTextView2.setText(currentItem.getEventlocation());
+        //holder.mImageView.setImageResource(currentItem.getImageResouce());
+        holder.mImageView.setImageURI(currentItem.getProfile());
+        holder.mTextView1.setText(currentItem.getEventName());
+        holder.mTextView2.setText(currentItem.getEventLocation());
         holder.mTextView3.setText(currentItem.getDay());
         holder.mTextView4.setText(currentItem.getMonth());
         holder.mTextView5.setText(currentItem.getCount());
