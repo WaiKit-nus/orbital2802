@@ -2,22 +2,19 @@ package com.example.orbital;
 
 import android.net.Uri;
 
-public class ExampleItem {
-
+public class JoinedEventItem {
     private Uri profile;
     private String uid;
-    private String eventName, eventLocation, Day, Month, Count;
+    private String eventName, Day, Month;
 
     //Empty Constructor for Firebase
-    private ExampleItem(){}
+    private JoinedEventItem(){}
 
-    public ExampleItem(Uri profile, String eventName, String eventLocation, String Day, String Month, String Count, String uid){
+    public JoinedEventItem(Uri profile, String eventName, String Day, String Month, String uid){
         this.profile = profile;
-        this.eventLocation = eventLocation;
         this.eventName = eventName;
         this.Day = Day;
         this.Month = Month;
-        this.Count = Count;
         this.uid = uid;
     }
 
@@ -37,14 +34,6 @@ public class ExampleItem {
         this.eventName = eventName;
     }
 
-    public String getEventLocation() {
-        return eventLocation;
-    }
-
-    public void setEventLocation(String eventLocation) {
-        this.eventLocation = eventLocation;
-    }
-
     public String getDay() {
         return Day;
     }
@@ -59,14 +48,6 @@ public class ExampleItem {
 
     public void setMonth(String month) {
         Month = month;
-    }
-
-    public String getCount() {
-        return Count;
-    }
-
-    public void setCount(String count) {
-        Count = count;
     }
 
     public String getUid() {return uid;}

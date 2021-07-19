@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CodingEvent"
+    tools:context=".EventInfo"
     android:background="@color/lightGrey"
     android:id="@+id/event_main_page"
     >
@@ -32,6 +32,7 @@
                 android:orientation="vertical">
 
                 <ImageView
+                    android:id="@+id/eventImage"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
@@ -46,6 +47,7 @@
                 android:paddingBottom="20dp">
 
                 <TextView
+                    android:id="@+id/eventTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ellipsize="end"
@@ -56,10 +58,10 @@
                     android:textStyle="bold"></TextView>
 
                 <TextView
+                    android:id="@+id/eventLocation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/location"
                     android:textColor="@color/DarkerGrey"
                     android:textSize="15sp">
 
@@ -96,10 +98,10 @@
                                 android:src="@drawable/ic_baseline_calendar_today_24"></ImageView>
 
                             <TextView
+                                android:id="@+id/eventDate"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="25.06.2021"
                                 android:textColor="@color/DarkerGrey"></TextView>
                     </LinearLayout>
                 </LinearLayout>
@@ -135,11 +137,11 @@
                                 android:src="@drawable/ic_baseline_access_time_24"></ImageView>
 
                             <TextView
+                                android:id="@+id/eventTime"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:layout_marginTop="1dp"
-                                android:text="2:00 PM"
                                 android:textColor="@android:color/holo_green_dark"></TextView>
 
                         </LinearLayout>
@@ -156,9 +158,9 @@
                     android:textSize="15sp"></TextView>
 
                 <TextView
+                    android:id="@+id/eventDiscription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/description"
                     android:textColor="@android:color/darker_gray"
                     android:textSize="15sp"
                     android:layout_marginTop="5dp"></TextView>
@@ -197,10 +199,10 @@
                             </ImageView>
 
                             <TextView
+                                android:id="@+id/eventOrganiser"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:text="Youth Corps Programmes"
                                 android:textColor="@android:color/darker_gray"></TextView>
                         </LinearLayout>
                     </LinearLayout>

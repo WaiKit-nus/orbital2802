@@ -35,6 +35,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -43,7 +44,7 @@ public class EventList extends AppCompatActivity {
     private FirestoreRecyclerAdapter  adapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private OnItemClickListener mListener;
-    private  ArrayList<ExampleItem> mExampleList;
+    private ArrayList<ExampleItem> mExampleList;
 
     FirebaseAuth mAuth;
     private String userID;
@@ -71,13 +72,33 @@ public class EventList extends AppCompatActivity {
             @Override
             protected void onBindViewHolder(@NonNull ExampleViewHolder holder, int position, @NonNull ExampleItem model) {
                 //ExampleItem currentItem = mExampleList.get(position);
-                //holder.mImageView.setImageResource(model.getImageResouce());
-                holder.mImageView.setImageURI(model.getProfile());
+                StorageReference profileRef = storageReference.child("Events/" + model.getUid() + "/profile.png");
+                profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        Picasso.get().load(uri).into(holder.mImageView);
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("1st UID", "1st getUid" + model.getUid().toString());
+                        Log.e("Failed:", "onFailure: Failed to retrieve URI" + e.toString());
+                    }
+                });
+                //holder.mImageView.setImageURI(model.getProfile());
                 holder.mTextView1.setText(model.getEventName());
                 holder.mTextView2.setText(model.getEventLocation());
                 holder.mTextView3.setText(model.getDay());
                 holder.mTextView4.setText(model.getMonth());
                 holder.mTextView5.setText(model.getCount());
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(EventList.this, EventInfo.class);
+                        intent.putExtra("UID", model.getUid());
+                        startActivity(intent);
+                    }
+                });
             }
 
             @NonNull
@@ -87,10 +108,11 @@ public class EventList extends AppCompatActivity {
                 ExampleViewHolder evh = new ExampleViewHolder(v, mListener);
                 return evh;
             }
+
         };
         buildRecyclerView(adapter);
 
-        /*EditText editText = findViewById(R.id.find_event);
+        EditText editText = findViewById(R.id.find_event);
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
@@ -102,70 +124,26 @@ public class EventList extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 filter(s.toString());
             }
-        })*/;
-
-    }
-    //Query
-    private void retrieveEvents()
-    {
-        mExampleList = new ArrayList<>();
-        db.collection("Events").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if(task.isSuccessful())
-                {
-                    Toast.makeText(EventList.this, "Retrieve Events Successful", Toast.LENGTH_SHORT).show();
-                    for(QueryDocumentSnapshot document: task.getResult())
-                    {
-                        StorageReference profileRef = storageReference.child("Events/" + document.getId() + "/profile.png");
-                        profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
-                                mExampleList.add(new ExampleItem(uri,
-                                        document.getString("eventName"),
-                                        document.getString("eventLocation"),
-                                        document.getString("Day"),
-                                        document.getString("Month"),
-                                        document.getString("Count")));
-                                Toast.makeText(EventList.this, "Added Items to List", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                }
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Log.d("Retrieve Events Failure", "onFailure: Failure to retrieve items");
-            }
         });
+
     }
 
-/*    private void filter(String text){
+    private void filter(String text){
         // Handles whenever you type somethings
         ArrayList<ExampleItem> filteredList = new ArrayList<>();
 
         for (ExampleItem item : mExampleList){
-            if (item.getEventname().toLowerCase().contains(text.toLowerCase())){
+            if (item.getEventName().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
             }
-            if (item.getEventlocation().toLowerCase().contains(text.toLowerCase())){
+            if (item.getEventLocation().toLowerCase().contains(text.toLowerCase())){
                 filteredList.add(item);
             }
         }
-        mAdapter.filteredList(filteredList);
-    }*/
+        mExampleList = filteredList;
+        adapter.notifyDataSetChanged();
+    }
 
-
-
-    /*private void createExampleList(){
-        mExampleList = new ArrayList<>();
-        mExampleList.add(new ExampleItem(R.drawable.coding,"Coding Games for Kids", "Zoom", "25", "JUN", "132"));
-        mExampleList.add(new ExampleItem(R.drawable.dlc,"Digital Learning Circles", "Woodlands", "3","JUL", "53"));
-        mExampleList.add(new ExampleItem(R.drawable.onlineengage,"Online Engagement 101", "Bukit Batok", "18","JUL", "34"));
-        mExampleList.add(new ExampleItem(R.drawable.healthteeth,"Let's Be Health-Teeth!", "Sembawang", "30","JUL", "20"));
-
-    }*/
     public void setOnItemClickListener(OnItemClickListener listener){
         mListener = listener;
     }
@@ -175,14 +153,6 @@ public class EventList extends AppCompatActivity {
 
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(adapter);
-
-        /*adapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                Intent intent = new Intent(getApplicationContext(), CodingEvent.class);
-                startActivity(intent);
-            }
-        });*/
     }
 
     public interface  OnItemClickListener {

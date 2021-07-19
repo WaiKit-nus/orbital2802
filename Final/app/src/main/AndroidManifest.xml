@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.orbital">
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -36,13 +37,23 @@
             android:name=".UpdateParticulars"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Chat" />
-        <activity android:name=".CodingEvent" />
+        <activity android:name=".EventInfo" />
         <activity android:name=".Survey" />
         <activity android:name=".Joined" />
         <activity
             android:name=".EventList"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Profile" />
+        <activity android:name=".QRCapture"
+            android:screenOrientation="portrait"
+            android:stateNotNeeded="true"
+            android:theme="@style/zxing_CaptureTheme"/>
+        <activity android:name=".UpcomingEventInfo"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
+        <activity android:name=".PastEventInfo"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
     </application>
 
 </manifest>
