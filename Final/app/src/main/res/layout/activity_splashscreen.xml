@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F2D8F8"
+    android:background="@color/white"
     android:orientation="vertical"
     >
 
@@ -45,7 +45,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.96"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/hotdog">
+        app:lottie_rawRes="@raw/loading">
 
     </com.airbnb.lottie.LottieAnimationView>
 

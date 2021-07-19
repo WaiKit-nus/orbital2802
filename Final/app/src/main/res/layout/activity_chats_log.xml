@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="0dp"
-        android:background="@color/darkPurple"
+        android:background="@color/white"
         android:id="@+id/toolbar">
 
         <RelativeLayout
@@ -28,7 +28,7 @@
                 android:textSize="20sp"
                 android:id="@+id/myapptext"
                 android:textStyle="bold"
-                android:textColor="@color/white">
+                android:textColor="@color/deepBlue">
 
             </TextView>
 
@@ -45,10 +45,10 @@
         android:layout_height="?attr/actionBarSize"
         android:id="@+id/include"
         android:layout_below="@id/toolbar"
-        app:tabTextColor="#77a3a7"
-        app:tabSelectedTextColor="@color/white"
-        app:tabIndicatorColor="@color/white"
-        android:backgroundTint="@color/darkPurple"
+        app:tabTextColor="@color/greyDate"
+        app:tabSelectedTextColor="@color/deepBlue"
+        app:tabIndicatorColor="@color/textBlue"
+        android:backgroundTint="@color/white"
         app:tabIndicatorHeight="3dp"
         android:layout_marginTop="0dp"
         >
@@ -68,13 +68,6 @@
 
         </com.google.android.material.tabs.TabItem>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="USER"
-            android:id="@+id/calls">
-
-        </com.google.android.material.tabs.TabItem>
 
 
 

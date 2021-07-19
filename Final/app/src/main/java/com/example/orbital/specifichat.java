@@ -30,6 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class specifichat extends AppCompatActivity {
 
     CardView msendmessagecardview;
     androidx.appcompat.widget.Toolbar mtoolbarofspecificchat;
-    //ImageView mimageviewofspecificuser;
+    ImageView mimageviewofspecificuser;
     TextView mnameofspecificuser;
 
     private String enteredmessage;
@@ -74,7 +75,7 @@ public class specifichat extends AppCompatActivity {
         msendmessagebutton = findViewById(R.id.imageviewsendmessage);
         mtoolbarofspecificchat = findViewById(R.id.toolbarofspecificchat);
         mnameofspecificuser = findViewById(R.id.Nameofspecificuser);
-       // mimageviewofspecificuser=findViewById(R.id.specificuserimageinimageview);
+        mimageviewofspecificuser=findViewById(R.id.specificuserimageinimageview);
         mbackbuttonofspecificchat = findViewById(R.id.backbuttonofspecificchat);
 
         messagesArrayList=new ArrayList<>();
@@ -166,7 +167,7 @@ public class specifichat extends AppCompatActivity {
         });
 
         mnameofspecificuser.setText(mrecievername);
-        /*String uri=intent.getStringExtra("imageuri");
+        String uri=intent.getStringExtra("imageuri");
         if(uri.isEmpty())
         {
             Toast.makeText(getApplicationContext(),"null is recieved",Toast.LENGTH_SHORT).show();
@@ -174,7 +175,7 @@ public class specifichat extends AppCompatActivity {
         else
         {
             Picasso.get().load(uri).into(mimageviewofspecificuser);
-        }*/
+        }
 
         msendmessagebutton.setOnClickListener(new View.OnClickListener() {
             @Override

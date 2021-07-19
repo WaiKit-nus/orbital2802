@@ -40,6 +40,7 @@ public class Editprofile extends AppCompatActivity {
     private EditText gender;
     private ImageView edit_imageView;
     private Uri imageUri;
+    private String ImageUriAcessToken;
 
     private Button confirm;
     private Button reset;
@@ -62,6 +63,7 @@ public class Editprofile extends AppCompatActivity {
         profileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
+                ImageUriAcessToken=uri.toString();
                 Picasso.get().load(uri).into(edit_imageView);
             }
         });
@@ -132,6 +134,7 @@ public class Editprofile extends AppCompatActivity {
                 fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
                     public void onSuccess(Uri uri) {
+                        ImageUriAcessToken=uri.toString();
                         Picasso.get().load(uri).into(edit_imageView);
                     }
                 });
@@ -154,6 +157,7 @@ public class Editprofile extends AppCompatActivity {
         userDetail.put("Gender", gender.getText().toString());
         userDetail.put("Status","online");
         userDetail.put("Uid",mAuth.getUid());
+        userDetail.put("image",ImageUriAcessToken);
 
 
         userID = mAuth.getCurrentUser().getUid();

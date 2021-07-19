@@ -39,7 +39,7 @@ public class ChatsLog extends AppCompatActivity {
         setContentView(R.layout.activity_chats_log);
 
         tabLayout = findViewById(R.id.include);
-        mcall = findViewById(R.id.calls);
+        //mcall = findViewById(R.id.calls);
         mchat = findViewById(R.id.chat);
         mstatus = findViewById(R.id.status);
         viewPager = findViewById(R.id.fragmentcontainer);
