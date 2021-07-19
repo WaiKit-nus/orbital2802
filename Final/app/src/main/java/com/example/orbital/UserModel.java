@@ -1,19 +1,28 @@
 package com.example.orbital;
 
 public class UserModel {
-   String Name, Contact, Address, Gender, Status, Uid;
+   String Name, Contact, Address, Gender, Status, Uid, image;
 
-    public UserModel(String Name, String Contact, String Address, String Gender, String Status, String Uid) {
+    public UserModel(String Name, String Contact, String Address, String Gender, String Status, String Uid, String image) {
         this.Name = Name;
         this.Contact = Contact;
         this.Address = Address;
         this.Gender = Gender;
         this.Status = Status;
         this.Uid = Uid;
+        this.image = image;
 
     }
 
     public UserModel() {
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getName() {

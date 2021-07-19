@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 
 public class chatFragment extends Fragment {
@@ -29,6 +33,10 @@ public class chatFragment extends Fragment {
     private FirebaseFirestore firebaseFirestore;
     LinearLayoutManager linearLayoutManager;
     private FirebaseAuth firebaseAuth;
+
+    ImageView mimageviewofuser;
+
+    StorageReference storageReference;
 
     FirestoreRecyclerAdapter<UserModel, NoteViewHolder> chatAdapter;
     RecyclerView mRecyclerView;
@@ -43,6 +51,8 @@ public class chatFragment extends Fragment {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
+        storageReference = FirebaseStorage.getInstance().getReference();
+
         mRecyclerView = v.findViewById(R.id.listview);
 
         Query query = firebaseFirestore.collection("Users").whereNotEqualTo("Uid",firebaseAuth.getUid());
@@ -59,7 +69,8 @@ public class chatFragment extends Fragment {
 
 
                 noteViewHolder.particularusername.setText(userModel.getName());
-                //fetch image code here
+                String uri=userModel.getImage();
+                Picasso.get().load(uri).into(mimageviewofuser);
                 if(userModel.getStatus().equals("online"))
                 {
                     noteViewHolder.statusofuser.setText(userModel.getStatus());
@@ -76,7 +87,7 @@ public class chatFragment extends Fragment {
                         Intent intent = new Intent(getActivity(),specifichat.class);
                         intent.putExtra("Name",userModel.getName());
                         intent.putExtra("receiveruid",userModel.getUid());
-                       // intent.putExtra("imageuri",firebasemodel.getImage());
+                        intent.putExtra("imageuri",userModel.getImage());
                         startActivity(intent);
 
                     }
@@ -126,6 +137,7 @@ public class chatFragment extends Fragment {
             super(itemView);
             particularusername=itemView.findViewById(R.id.nameofuser);
             statusofuser=itemView.findViewById(R.id.statusofuser);
+            mimageviewofuser = itemView.findViewById(R.id.imageviewofuser);
 
 
 

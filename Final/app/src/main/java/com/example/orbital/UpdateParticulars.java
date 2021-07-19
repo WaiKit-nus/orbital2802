@@ -42,6 +42,7 @@ public class UpdateParticulars extends AppCompatActivity {
     private Button confirmBtn;
 
     private Uri imageUri;
+    private String ImageUriAcessToken;
 
     //Firebase Cloud Firestore
     FirebaseAuth mAuth;
@@ -141,6 +142,8 @@ public class UpdateParticulars extends AppCompatActivity {
         users.put("Gender", gender.getText().toString());
         users.put("Status", "online");
         users.put("Uid",mAuth.getUid());
+
+
         userID = mAuth.getCurrentUser().getUid();
         db.collection("Users").document(userID).set(users).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
