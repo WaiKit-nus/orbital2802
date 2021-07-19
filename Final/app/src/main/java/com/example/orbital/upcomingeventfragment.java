@@ -53,7 +53,7 @@ public class upcomingeventfragment extends Fragment {
         db = FirebaseFirestore.getInstance();
         storageReference = FirebaseStorage.getInstance().getReference();
 
-        Query query = db.collection("Users").document(mAuth.getUid()).collection("EventsJoined");
+        Query query = db.collection("Users").document(mAuth.getUid()).collection("UpcomingEvents");
         FirestoreRecyclerOptions<JoinedEventItem> options = new FirestoreRecyclerOptions.Builder<JoinedEventItem>().setQuery(query, JoinedEventItem.class).build();
         adapter = new FirestoreRecyclerAdapter<JoinedEventItem, joinViewHolder>(options) {
             @Override

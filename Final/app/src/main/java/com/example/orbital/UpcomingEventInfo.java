@@ -113,7 +113,7 @@ public class UpcomingEventInfo extends AppCompatActivity {
     }
 
     public void openChat() {
-        Intent intent = new Intent(this, Chat.class);
+        Intent intent = new Intent(this, ChatsLog.class);
         startActivity(intent);
     }
 
