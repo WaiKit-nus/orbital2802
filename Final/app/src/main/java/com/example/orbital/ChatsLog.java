@@ -61,7 +61,7 @@ public class ChatsLog extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
 
-                if (tab.getPosition()==0 || tab.getPosition() == 1 || tab.getPosition() == 2){
+                if (tab.getPosition()==0 || tab.getPosition() == 1){
                     pagerAdapter.notifyDataSetChanged();
                 }
             }
@@ -88,10 +88,6 @@ public class ChatsLog extends AppCompatActivity {
             case R.id.profile:
                 Intent intent = new Intent(ChatsLog.this,Profile.class);
                 startActivity(intent);
-                break;
-
-            case R.id.settings:
-                Toast.makeText(getApplicationContext(),"Settings is Clicked", Toast.LENGTH_SHORT).show();
                 break;
         }
 

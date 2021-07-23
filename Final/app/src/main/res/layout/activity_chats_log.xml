@@ -47,7 +47,7 @@
         android:layout_below="@id/toolbar"
         app:tabTextColor="@color/greyDate"
         app:tabSelectedTextColor="@color/deepBlue"
-        app:tabIndicatorColor="@color/textBlue"
+        app:tabIndicatorColor="@color/deepBlue"
         android:backgroundTint="@color/white"
         app:tabIndicatorHeight="3dp"
         android:layout_marginTop="0dp"
@@ -63,10 +63,11 @@
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PROFILE"
+            android:text="queries"
             android:id="@+id/status">
 
         </com.google.android.material.tabs.TabItem>
+
 
 
 
