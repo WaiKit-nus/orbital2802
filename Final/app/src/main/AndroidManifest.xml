@@ -60,5 +60,6 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"
             android:windowSoftInputMode="adjustPan|adjustResize" />
     </application>
+    <queries> <package android:name="com.whatsapp" /> </queries>
 
 </manifest>

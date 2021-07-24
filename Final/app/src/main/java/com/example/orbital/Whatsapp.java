@@ -6,19 +6,20 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hbb20.CountryCodePicker;
+//import com.hbb20.CountryCodePicker;
 
 public class Whatsapp extends AppCompatActivity {
 
 
     TextView mEventName, mEventperson, mEventnum;
-    CountryCodePicker countryCodePicker;
+    //CountryCodePicker countryCodePicker;
     EditText message;
     Button sendbtn;
 
@@ -86,6 +87,7 @@ public class Whatsapp extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
 
             whatsappInstalled = false;
+            Log.d("Failed to find Whatsapp:", e.toString());
 
         }
 

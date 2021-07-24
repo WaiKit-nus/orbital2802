@@ -3,6 +3,8 @@
     <style name="Theme.Orbital" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="colorPrimaryDark">@color/purple_700</item>
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
@@ -11,6 +13,8 @@
         <!-- Customize your theme here. -->
         <item name="android:textSize">0sp</item>
         <item name="android:textColor">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
 
     </style>
     <style name="RatingBar" parent="Theme.Orbital">
