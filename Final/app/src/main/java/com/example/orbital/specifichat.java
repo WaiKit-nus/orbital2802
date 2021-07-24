@@ -168,14 +168,10 @@ public class specifichat extends AppCompatActivity {
 
         mnameofspecificuser.setText(mrecievername);
         String uri=intent.getStringExtra("imageuri");
-        if(uri.isEmpty())
-        {
-            Toast.makeText(getApplicationContext(),"null is recieved",Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
+
+
             Picasso.get().load(uri).into(mimageviewofspecificuser);
-        }
+
 
         msendmessagebutton.setOnClickListener(new View.OnClickListener() {
             @Override

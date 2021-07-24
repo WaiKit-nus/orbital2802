@@ -26,6 +26,7 @@ public class PagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new statusFragment();
 
+
             default:
                 return null;
 

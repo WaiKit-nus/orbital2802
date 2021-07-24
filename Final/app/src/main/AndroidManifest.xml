@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.orbital">
-    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@drawable/logo_circle_nowords"
         android:supportsRtl="true"
         android:theme="@style/Theme.Orbital">
-        <activity android:name=".specifichat"></activity>
+        <activity android:name=".Whatsapp"></activity>
+        <activity android:name=".specifichat" />
         <activity android:name=".ChatsLog" />
         <activity android:name=".Editprofile" />
         <activity
@@ -44,16 +46,19 @@
             android:name=".EventList"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Profile" />
-        <activity android:name=".QRCapture"
+        <activity
+            android:name=".QRCapture"
             android:screenOrientation="portrait"
             android:stateNotNeeded="true"
-            android:theme="@style/zxing_CaptureTheme"/>
-        <activity android:name=".UpcomingEventInfo"
+            android:theme="@style/zxing_CaptureTheme" />
+        <activity
+            android:name=".UpcomingEventInfo"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
-        <activity android:name=".PastEventInfo"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
+        <activity
+            android:name=".PastEventInfo"
             android:theme="@style/Theme.AppCompat.NoActionBar"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+            android:windowSoftInputMode="adjustPan|adjustResize" />
     </application>
 
 </manifest>
