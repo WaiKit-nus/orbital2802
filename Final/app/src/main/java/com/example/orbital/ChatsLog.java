@@ -2,6 +2,7 @@ package com.example.orbital;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
@@ -27,7 +28,7 @@ public class ChatsLog extends AppCompatActivity {
     TabItem mchat,mcall,mstatus;
     ViewPager viewPager;
     PagerAdapter pagerAdapter;
-    androidx.appcompat.widget.Toolbar mtoolbar;
+    Toolbar mtoolbar;
 
     FirebaseAuth mAuth;
     private String userID;

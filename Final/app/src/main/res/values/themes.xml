@@ -13,7 +13,8 @@
         <item name="android:textColor">@android:color/transparent</item>
 
     </style>
-    <style name="RatingBar" parent="Theme.AppCompat">
+    <style name="RatingBar" parent="Theme.Orbital">
+        <item name="android:windowActionBar">false</item>
         <item name="colorControlNormal">@color/lightGrey</item>
         <item name="colorControlActivated">@color/duskYellow</item>
     </style>
