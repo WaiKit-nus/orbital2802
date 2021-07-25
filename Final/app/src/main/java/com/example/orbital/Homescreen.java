@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Homescreen extends AppCompatActivity implements View.OnClickListener {
@@ -34,14 +36,14 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
         events = (CardView) findViewById(R.id.events_card);
         joinedevents = (CardView) findViewById(R.id.joinedevents_card);
         survey = (CardView) findViewById(R.id.survey_card);
-        chatlog = (CardView) findViewById(R.id.chatlog);
+
 
         //Add click Listener to clock
         profile.setOnClickListener(this);
         events.setOnClickListener(this);
         joinedevents.setOnClickListener(this);
         survey.setOnClickListener(this);
-        chatlog.setOnClickListener(this);
+
         logoutUser();
     }
 
@@ -53,8 +55,8 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
             case R.id.profile_card: i = new Intent(this, Profile.class); startActivity(i); break;
             case R.id.events_card: i = new Intent(this, EventList.class); startActivity(i);break;
             case R.id.joinedevents_card: i = new Intent(this, Joined.class); startActivity(i);break;
-            case R.id.survey_card: i = new Intent(this, Survey.class); startActivity(i); break;
-            case R.id.chatlog: i = new Intent(this, ChatsLog.class); startActivity(i); break;
+            case R.id.survey_card: i = new Intent(this, ChatsLog.class); startActivity(i); break;
+
             default:break;
         }
 
@@ -79,6 +81,31 @@ public class Homescreen extends AppCompatActivity implements View.OnClickListene
 
        }
    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        DocumentReference documentReference = db.collection("Users").document(mAuth.getUid());
+        documentReference.update("Status","offline").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                //Toast.makeText(getApplicationContext(),"Now User is Offline", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        DocumentReference documentReference = db.collection("Users").document(mAuth.getUid());
+        documentReference.update("Status","online").addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                //Toast.makeText(getApplicationContext(),"Now User is online", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
 
 
 }

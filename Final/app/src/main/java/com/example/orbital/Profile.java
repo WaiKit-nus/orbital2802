@@ -104,7 +104,7 @@ public class Profile extends AppCompatActivity {
         documentReference.update("Status","offline").addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(),"Now User is Offline", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Now User is Offline", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -117,7 +117,7 @@ public class Profile extends AppCompatActivity {
         documentReference.update("Status","online").addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(getApplicationContext(),"Now User is online", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),"Now User is online", Toast.LENGTH_SHORT).show();
 
             }
         });
