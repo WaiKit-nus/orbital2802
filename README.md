@@ -23,15 +23,14 @@ Scope of Project
 Key Features:
 1) User Base - The application has a user base. Each User is required to sign up for an account which holds the user’s particulars and individualised profile.
 2) Registration for event via the app - Allows Users to search up an event that they are interested to volunteer in and sign up via the app.
-3) In-App Chat function - Allows communication between the User and the organiser of the event.
-4) Navigation - After successfully signing up for the event, the navigation feature provides direction for the user to reach the event place.
+3) In-App Chat function - Allows communication between the User and the Volunteers registered.
+4) Queries - Allows user to send queries to the event in-charge via whatsapp from the application.
 5) Calendar - Keep track of when your registered events are. Links directly to your device’s calendar.
-6) Feats - Contains the history of your volunteering. Can click in and see the event details of which you previously volunteered for.
 
 Additional Features:
 1) UI friendly - Efforts were put in to make the app user friendly with clean designs (Card view style & List style).
 2) SplashScreen - To make it more morden.
-3) Stickers and trophy system - Aim to include a point system. The more you volunteer, the more points you are awarded to obtain different stickers in the app.
+3) QR Code - User scan QR code from the event to take their attendance
 
 Existing platforms:
 1) Youth Corps Website - covers a diverse range of volunteer options for young people through ad - hoc basis, regular, and project-based service programs, with a focus on education, the environment, health, special needs, arts, sports, and history. Youth Corps Singapore Website is not fully optimised when users access the website through phone.
@@ -42,14 +41,16 @@ How is Voluntier Different:
 We aim to be the go-to one-stop platform for people who want to volunteer. The process when using Voluntier is very stream-lined and efficient. The User interface is designed to be friendly and simplistic. Voluntier also has key features that the other app does not have.
 
 Key Features that only Voluntier has:
-In-app chat function to allow communication between organiser and user.
-Inclusion of Google maps API which allows easy navigation for the User to the event space.
+In-app chat function to allow communication between volunteers registered for the application
+Contact Event in-charge through whatsapp from the application
 Reminders when event is nearing
 
 Development plan:
-Task for Milestone 2
-Deadline
-1.SplashScreen + HomeScreen + Login Page + Registration Page      05/6/2021
-2.Tutorial for Firebase + Profile Page + Edit Profile Page        12/6/2021
-3.Event Page + Feats Page + Calendar                              19/6/2021
-4.Navigation with Google Map API + Prep for MS2                   28/6/2021
+Task for Milestone 3
+1. Link Event list with firebase firestore   
+2. Complete the backend process for upcomming and Past event
+3. Upon completing event, prompt user with Survey
+4. Chat Log displaying users registered
+5. Send Messages 
+6. Send whatsapp message through application
+7. User testing
