@@ -110,16 +110,16 @@
             android:layout_marginTop="14dp">
 
             <ImageView
-                android:layout_width="55dp"
-                android:layout_height="60dp"
+                android:layout_width="50sp"
+                android:layout_height="50dp"
                 android:padding="0dp"
                 android:layout_marginEnd="10dp"
-                android:src="@drawable/ws_num"/>
+                android:src="@drawable/ws_number"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
+                android:paddingLeft="10dp"
                 android:orientation="vertical">
 
                 <TextView
