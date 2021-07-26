@@ -79,6 +79,7 @@ public class chatFragment extends Fragment {
                 else
                 {
                     noteViewHolder.statusofuser.setText(userModel.getStatus());
+                    noteViewHolder.statusofuser.setTextColor(Color.GRAY);
                 }
 
                 noteViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
